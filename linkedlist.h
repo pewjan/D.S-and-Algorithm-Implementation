@@ -13,6 +13,7 @@ class LinkedList {
     };
 
     Node * head;
+
   public:
     LinkedList();
     void appendNode(int);
