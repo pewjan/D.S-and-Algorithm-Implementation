@@ -11,13 +11,16 @@ private:
   };
 
   BinaryNode * rootNode;
-  BinaryTree::BinaryNode * insert(BinaryNode  * rootNode, int x);
+  void insert(BinaryNode  * rootNode, int x);
+  void find(BinaryNode  * rootNode);
+  
+  //BinaryTree::BinaryNode * deleteNode(BinaryNode * rootNode, int x);
 public:
   BinaryTree();
   void Search(int);
   void Add(int);
-  
-  void Remove(int);
+  void InOrderTraversal();
+  //void Remove(int);
 
 
 

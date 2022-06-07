@@ -14,20 +14,52 @@ void BinaryTree::Add(int x){
   
   
 }
-BinaryTree::BinaryNode * BinaryTree::insert(BinaryNode  * rootNode, int x){
+
+void  BinaryTree::insert(BinaryNode  * nodePtr, int x){
   BinaryNode * newNode = new BinaryNode;
   newNode->value = x;
-  BinaryNode * nodePtr;
-  if(rootNode == NULL){
+
+  if(rootNode == nullptr){
     rootNode = newNode;
-    return rootNode;
-  }else if(x <= rootNode->value){
-      rootNode->leftNode = insert(rootNode->leftNode, x);
-  }else{
-    rootNode->rightNode = insert(rootNode->rightNode, x);
+    return;
   }
-  return rootNode;
-  
+  if(nodePtr->value > x){
+    if(nodePtr->leftNode != nullptr){
+      insert(nodePtr->leftNode, x);
+    }else{
+      nodePtr->leftNode = newNode;
+    }
+    
+  }else{
+    if(nodePtr->rightNode != nullptr){
+      insert(nodePtr->rightNode, x);
+    }else{
+      nodePtr->rightNode = newNode;
+
+      
+    }
+  }
+
   
   
 }
+
+  void BinaryTree::InOrderTraversal(){
+    BinaryTree::find(rootNode);
+  }
+
+  void BinaryTree::find(BinaryNode  * nodePtr){
+    if(rootNode != nullptr){
+      if(nodePtr->leftNode != nullptr){
+        BinaryTree::find(nodePtr->leftNode);
+      }
+      cout << nodePtr->value << " ";
+      if(nodePtr->rightNode != nullptr){
+        BinaryTree::find(nodePtr->rightNode);
+    }
+  }
+    else{
+        cout << "Empty Tree" << endl;
+        
+    }
+  }
