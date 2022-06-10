@@ -18,7 +18,5 @@ int main(){
     tree.Add(TreeValues[i]);
   }
 
-  tree.InOrderTraversal();
-
   
 }

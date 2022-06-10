@@ -30,7 +30,7 @@ void  BinaryTree::insert(BinaryNode  * nodePtr, int x){
       nodePtr->leftNode = newNode;
     }
     
-  }else{
+  }else if(nodePtr->value < x){
     if(nodePtr->rightNode != nullptr){
       insert(nodePtr->rightNode, x);
     }else{
@@ -38,6 +38,8 @@ void  BinaryTree::insert(BinaryNode  * nodePtr, int x){
 
       
     }
+  }else{
+    cout << "That number has already been added?!?!?!" << endl;
   }
 
   

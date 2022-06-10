@@ -11,8 +11,8 @@ private:
   };
 
   BinaryNode * rootNode;
-  void insert(BinaryNode  * rootNode, int x);
-  void find(BinaryNode  * rootNode);
+  void insert(BinaryNode  * nodePtr, int x);
+  void find(BinaryNode  * nodePtr);
   
   //BinaryTree::BinaryNode * deleteNode(BinaryNode * rootNode, int x);
 public:
@@ -20,7 +20,7 @@ public:
   void Search(int);
   void Add(int);
   void InOrderTraversal();
-  //void Remove(int);
+  
 
 
 
